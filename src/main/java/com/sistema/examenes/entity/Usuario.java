@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
@@ -30,6 +32,7 @@ public class Usuario {
     private String perfil;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "usuario")
+    @JsonManagedReference
     private Set<UsuarioRol> usuarioRol = new HashSet<>();
 
     public Usuario() {

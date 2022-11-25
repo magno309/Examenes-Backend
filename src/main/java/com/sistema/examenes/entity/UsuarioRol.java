@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class UsuarioRol {
 
@@ -15,6 +17,7 @@ public class UsuarioRol {
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JsonBackReference
     private Usuario usuario;
 
     @ManyToOne
