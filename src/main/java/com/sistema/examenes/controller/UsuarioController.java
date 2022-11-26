@@ -37,6 +37,9 @@ public class UsuarioController {
 
         UsuarioRol usuarioRol = new UsuarioRol();
         usuarioRol.setUsuario(usuario);
+        usuarioRol.setRol(rol);
+
+        roles.add(usuarioRol);
 
         return usuarioService.guardarUsuario(usuario, roles);
     }
